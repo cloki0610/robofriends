@@ -10,6 +10,7 @@ const RobotList: React.FC<{ robots: IRobot[] }> = ({ robots }) => {
       {robots.map((robot: IRobot) => {
         return (
           <RobotCard
+            key={robot.id}
             id={robot.id}
             name={robot.name}
             username={robot.username}
