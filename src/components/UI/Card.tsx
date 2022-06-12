@@ -5,7 +5,11 @@ type Props = {
 };
 
 const Card: React.FC<Props> = ({ children }) => {
-  return <div>{children}</div>;
+  return (
+    <div className="bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5">
+      {children}
+    </div>
+  );
 };
 
 export default Card;
