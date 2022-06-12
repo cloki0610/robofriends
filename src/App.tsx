@@ -18,7 +18,7 @@ const App: React.FC = () => {
 
   return (
     <div className="tc">
-      <h1 className={classes.title + " f1"}>RoboFriends</h1>
+      <h1 className={`${classes.title} f1`}>RoboFriends</h1>
       <SearchBox searchChange={onSearchChange} searchfield={searchfield} />
       <RobotList robots={filteredArray} />
     </div>
