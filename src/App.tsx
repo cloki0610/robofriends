@@ -34,23 +34,19 @@ const App: React.FC = () => {
     setSearchfield(event.target.value);
   };
 
-  if (robotsArray.length === 0) {
-    return (
-      <div className="tc">
-        <h1 className={`${classes.title} f1`}>Loading...</h1>
-      </div>
-    );
-  } else {
-    return (
-      <div className="tc">
-        <h1 className={`${classes.title} f1`}>RoboFriends</h1>
-        <SearchBox searchChange={onSearchChange} searchfield={searchfield} />
-        <Scroll>
-          <RobotList robots={filteredArray} />
-        </Scroll>
-      </div>
-    );
-  }
+  return !robotsArray.length ? (
+    <div className="tc">
+      <h1 className={`${classes.title} f1`}>Loading...</h1>
+    </div>
+  ) : (
+    <div className="tc">
+      <h1 className={`${classes.title} f1`}>RoboFriends</h1>
+      <SearchBox searchChange={onSearchChange} searchfield={searchfield} />
+      <Scroll>
+        <RobotList robots={filteredArray} />
+      </Scroll>
+    </div>
+  );
 };
 
 export default App;
